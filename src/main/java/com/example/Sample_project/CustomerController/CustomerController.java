@@ -26,7 +26,7 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    @PostMapping(path = "/save")
+    @PostMapping(path = "/createCustomer")
     public ResponseEntity<?> saveCustomer(@RequestBody CustomerSaveDTO customerSaveDTO) {
         try {
             String id = customerService.addCustomer(customerSaveDTO);
