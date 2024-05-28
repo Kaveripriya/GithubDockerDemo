@@ -1,10 +1,10 @@
-package com.example.Spring_Angular_Demo_App;
+package com.example.Sample_project;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringAngularDemoAppApplicationTests {
+class SampleProjectApplicationTests {
 
 	@Test
 	void contextLoads() {

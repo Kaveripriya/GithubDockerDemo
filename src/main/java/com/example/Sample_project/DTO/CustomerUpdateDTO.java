@@ -1,18 +1,28 @@
-package com.example.Spring_Angular_Demo_App.DTO;
+package com.example.Sample_project.DTO;
 
-public class CustomerSaveDTO {
-
+public class CustomerUpdateDTO {
+    private int customerid;
     private String customername;
     private String customeraddress;
     private int mobile;
 
-    public CustomerSaveDTO(String customername, String customeraddress, int mobile) {
+    public CustomerUpdateDTO(int customerid, String customername, String customeraddress, int mobile) {
+        this.customerid = customerid;
         this.customername = customername;
         this.customeraddress = customeraddress;
         this.mobile = mobile;
     }
 
+    public CustomerUpdateDTO() {
+    }
 
+    public int getCustomerid() {
+        return customerid;
+    }
+
+    public void setCustomerid(int customerid) {
+        this.customerid = customerid;
+    }
 
     public String getCustomername() {
         return customername;
@@ -40,8 +50,9 @@ public class CustomerSaveDTO {
 
     @Override
     public String toString() {
-        return "CustomerSaveDTO{" +
-                "customername='" + customername + '\'' +
+        return "CustomerDTO{" +
+                "customerid=" + customerid +
+                ", customername='" + customername + '\'' +
                 ", customeraddress='" + customeraddress + '\'' +
                 ", mobile=" + mobile +
                 '}';

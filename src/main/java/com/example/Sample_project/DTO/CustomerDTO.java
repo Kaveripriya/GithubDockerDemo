@@ -1,19 +1,26 @@
-package com.example.Spring_Angular_Demo_App.DTO;
+package com.example.Sample_project.DTO;
 
-public class CustomerUpdateDTO {
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+public class CustomerDTO {
+
+
     private int customerid;
     private String customername;
     private String customeraddress;
     private int mobile;
 
-    public CustomerUpdateDTO(int customerid, String customername, String customeraddress, int mobile) {
+    public CustomerDTO(int customerid, String customername, String customeraddress, int mobile) {
         this.customerid = customerid;
         this.customername = customername;
         this.customeraddress = customeraddress;
         this.mobile = mobile;
     }
 
-    public CustomerUpdateDTO() {
+    public CustomerDTO() {
     }
 
     public int getCustomerid() {

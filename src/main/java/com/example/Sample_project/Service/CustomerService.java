@@ -1,14 +1,17 @@
-package com.example.Spring_Angular_Demo_App.Service;
+package com.example.Sample_project.Service;
 
-import com.example.Spring_Angular_Demo_App.DTO.CustomerDTO;
-import com.example.Spring_Angular_Demo_App.DTO.CustomerSaveDTO;
-import com.example.Spring_Angular_Demo_App.DTO.CustomerUpdateDTO;
+import com.example.Sample_project.DTO.CustomerDTO;
+import com.example.Sample_project.DTO.CustomerSaveDTO;
+import com.example.Sample_project.DTO.CustomerUpdateDTO;
 
 import java.util.List;
 
 public interface CustomerService {
     String addCustomer(CustomerSaveDTO customerSaveDTO);
+
     List<CustomerDTO> getAllCustomer();
+
     String updateCustomers(CustomerUpdateDTO customerUpdateDTO);
+
     boolean deleteCustomer(int id);
 }

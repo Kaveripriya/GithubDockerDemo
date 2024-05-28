@@ -1,0 +1,46 @@
+name: Deploy App to Azure App services
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    - runs-on:ubunto-latest
+    - steps:
+        - name: Checkout Source
+          uses: actions/checkout@v3
+        - name: Setup Java
+          uses: actions/setup-java@v3
+          with:
+            distribution: 'temurin'
+            java-version: '17'
+
+        - name: Build Project
+          run: mvn clean install -DskipTests
+        - name: Upload Artifact for deployment job
+          uses: actions/upload-artifact@v2
+          with:
+            name: sample-project
+            path: ${{ github.workspace }}/target/*.jar
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download Artificat from build job
+        uses: actions/download-artifact@v2
+        with:
+          name: sample-project
+      - name: Deploy to Azure App Services
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: springboot-app-azure
+          publish-profile: ${{ secrets.AZUREWEBAPPPUBLISHPROFILE }}
+          package: '*.jar'
+
+
+
+
+
+
